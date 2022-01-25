@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -64,7 +65,11 @@ public class LoginRegisterServlet extends HttpServlet {
 			   ResultSet i = ps.executeQuery();
 			 //Step 7: check if the query had been successfully execute, return “You are successfully registered” via the response,
 			   while (i.next()) {
+				   
 				   String id = i.getString("id");
+				   Cookie ck=new Cookie("USERID",id);//creating cookie object  
+				   response.addCookie(ck);//adding cookie in the response  
+				   
 				   PrintWriter writer = response.getWriter();
 				   writer.println("<h1>" + "You have successfully login as " + id);
 				   writer.close();
@@ -102,6 +107,7 @@ public class LoginRegisterServlet extends HttpServlet {
 			   int i = ps.executeUpdate();
 			 //Step 7: check if the query had been successfully execute, return “You are successfully registered” via the response,
 			   if (i > 0){
+
 			   PrintWriter writer = response.getWriter();
 			   writer.println("<h1>" + "You have successfully registered an account!" + "</h1>");
 			   writer.close();
