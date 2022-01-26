@@ -24,12 +24,12 @@ crossorigin="anonymous">
 			<form action="LoginRegisterServlet" method="post">
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
-                            Email:<input type="text" name="email">
+                            Email:<input type="text" name="email" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
-                            Password:<input type="password" name="password"> 
+                            Password:<input type="password" name="password" required> 
                         </div>
                     </div>
                     <div class="row">

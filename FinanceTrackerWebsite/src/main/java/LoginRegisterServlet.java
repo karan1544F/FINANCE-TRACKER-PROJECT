@@ -64,16 +64,28 @@ public class LoginRegisterServlet extends HttpServlet {
 			 //Step 6: perform the query on the database using the prepared statement
 			   ResultSet i = ps.executeQuery();
 			 //Step 7: check if the query had been successfully execute, return “You are successfully registered” via the response,
-			   while (i.next()) {
+			   if (i.next()) {
 				   
 				   String id = i.getString("id");
+				   if(id!=""){
 				   Cookie ck=new Cookie("USERID",id);//creating cookie object  
 				   response.addCookie(ck);//adding cookie in the response  
-				   
-				   PrintWriter writer = response.getWriter();
-				   writer.println("<h1>" + "You have successfully login as " + id);
-				   writer.close();
+				   out.println("<script type=\"text/javascript\">");
+		            out.println("alert('user"+id+" have logged in!');");
+		            out.println("window.location.href = \"index.jsp\";");
+		            out.println("</script>");
+		            
 				   }
+				   
+			   } 
+			   else {
+				   out.println("<script type=\"text/javascript\">");
+		            out.println("alert('Wrong email or password');");
+		            out.println("window.location.href = \"login.jsp\";");
+		            out.println("</script>");
+					 out.close();
+
+			   }
 			   }
 			//Step 8: catch and print out any exception
 			catch (Exception exception) {
@@ -92,6 +104,7 @@ public class LoginRegisterServlet extends HttpServlet {
 			String p = request.getParameter("password");
 			String e = request.getParameter("email");
 			//Step 3: attempt connection to database using JDBC, you can change the username and password accordingly using the phpMyAdmin > User Account dashboard
+			
 			try {
 			 Class.forName("com.mysql.jdbc.Driver");
 			 Connection con = DriverManager.getConnection(
@@ -108,14 +121,20 @@ public class LoginRegisterServlet extends HttpServlet {
 			 //Step 7: check if the query had been successfully execute, return “You are successfully registered” via the response,
 			   if (i > 0){
 
-			   PrintWriter writer = response.getWriter();
-			   writer.println("<h1>" + "You have successfully registered an account!" + "</h1>");
-			   writer.close();
+				   out.println("<script type=\"text/javascript\">");
+		            out.println("alert('user have been registered in!');");
+		            out.println("window.location.href = \"login.jsp\";");
+		            out.println("</script>");
 			   }
 			   }
 			//Step 8: catch and print out any exception
 			catch (Exception exception) {
 				 System.out.println(exception);
+				 out.println("<script type=\"text/javascript\">");
+		            out.println("alert('Email already registered');");
+		            out.println("window.location.href = \"register.jsp\";");
+		            out.println("</script>");
+
 				 out.close();
 				}
 
