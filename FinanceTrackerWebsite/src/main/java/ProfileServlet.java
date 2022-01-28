@@ -32,6 +32,8 @@ public class ProfileServlet extends HttpServlet {
 		 
 	//Step 2: Prepare list of SQL prepared statements to perform CRUD to our database
 		 private static final String SELECT_USER_BY_ID = "select iduser,id,name,surname,bio from profile where iduser =?";
+		 private static final String UPDATE_USERS_SQL = "update profile set iduser=?, id=?, name = ?,surname= ?,bio=? where iduser = ?;";
+		 private static final String DELETE_USERS_SQL = "delete from user where id = ?;";
 	//Step 3: Implement the getConnection method which facilitates connection to the database via JDBC
 		  protected Connection getConnection() {
 		  Connection connection = null;
@@ -62,6 +64,12 @@ public class ProfileServlet extends HttpServlet {
 	            case "/ProfileServlet/edit":
 	                showProfile(request, response);
 	                break;
+	            case "/ProfileServlet/update":
+	                updateProfile(request, response);
+	                break;
+	            case "/ProfileServlet/delete":
+	                deleteUser(request, response);
+	                break;        
 	            }
 	        } catch (SQLException ex) {
 	            throw new ServletException(ex);
@@ -87,7 +95,7 @@ public class ProfileServlet extends HttpServlet {
                 String name = rs.getString("name");
                 String surname = rs.getString("surname");
                 String bio = rs.getString("bio");
-                existingProfile = new Profile(userid,id, name, surname, bio);
+                existingProfile = new Profile(id,userid, name, surname, bio);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -97,6 +105,48 @@ public class ProfileServlet extends HttpServlet {
         request.getRequestDispatcher("/userProfile.jsp").forward(request, response);
     }
 	
+		//method to update the user table base on the form data
+	    private void updateProfile(HttpServletRequest request, HttpServletResponse response)
+	    throws SQLException, IOException {
+	    //Step 1: Retrieve value from the request
+	     Integer iduser = Integer.parseInt(request.getParameter("iduser"));
+	     Integer id = Integer.parseInt(request.getParameter("id"));
+	     String name = request.getParameter("name");
+	     String surname = request.getParameter("surname");
+	     String bio = request.getParameter("bio");
+
+	 
+
+	     //Step 2: Attempt connection with database and execute update user SQL query
+	     try (Connection connection = getConnection(); PreparedStatement statement =
+	    connection.prepareStatement(UPDATE_USERS_SQL);) {
+	     statement.setInt(1, iduser);
+	     statement.setInt(2, id);
+	     statement.setString(3, name);
+	     statement.setString(4, surname);
+	     statement.setString(5, bio);
+	     statement.setInt(6, iduser);
+
+	     int i = statement.executeUpdate();
+	     }	
+	   //Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
+	     response.sendRedirect("http://localhost:8080/FinanceTrackerWebsite/ProfileServlet/edit?iduser="+iduser);
+	    } 
+	    
+	  //method to delete user
+	    private void deleteUser(HttpServletRequest request, HttpServletResponse response)
+	    throws SQLException, IOException {
+	    //Step 1: Retrieve value from the request
+	     Integer id = Integer.parseInt(request.getParameter("iduser"));
+	     //Step 2: Attempt connection with database and execute delete user SQL query
+	     try (Connection connection = getConnection(); PreparedStatement statement =
+	    connection.prepareStatement(DELETE_USERS_SQL);) {
+	     statement.setInt(1, id);
+	     int i = statement.executeUpdate();
+	     }
+	     //Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
+	     response.sendRedirect("http://localhost:8080/FinanceTrackerWebsite/index.jsp");
+	    }
 	
 	
 

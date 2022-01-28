@@ -18,5 +18,9 @@
  <servlet-mapping>
  <servlet-name>ProfileServlet</servlet-name>
  <url-pattern>/ProfileServlet/edit</url-pattern>
+ <url-pattern>/ProfileServlet/update</url-pattern>
+ <url-pattern>/ProfileServlet/delete</url-pattern>
+ 
+ 
  </servlet-mapping>
 </web-app>
