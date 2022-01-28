@@ -9,9 +9,9 @@
 <body>
 <form action="FinanceServlet" method="post">
 	iduser: <input type="text" name="iduser">
-	income: <input type="text" name="income">
-	saving: <input type="text" name="saving">
-	<input type="submit" value = "call servlet" />
+	Add your monthly income: <input type="text" name="income">
+	How much do you wish to save: <input type="text" name="saving">
+	<input type="submit" value = "Add finance" />
 </form>
 </body>
 </html>

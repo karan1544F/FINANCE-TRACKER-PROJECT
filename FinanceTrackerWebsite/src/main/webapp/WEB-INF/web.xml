@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>FinanceTrackerWebsite</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+ 	<servlet-name>ReturnFinanceServlet</servlet-name>
+ 	<servlet-class>ReturnFinanceServlet</servlet-class>
+ 	
+ 	
+  </servlet>
+<servlet>
+ 	<servlet-name>Expenditure</servlet-name>
+ 	<servlet-class>Expenditure</servlet-class>
+ 	
+  </servlet>
+  <servlet-mapping>
+ 	<servlet-name>ReturnFinanceServlet</servlet-name>
+	<url-pattern>/ReturnFinanceServlet/dashboard</url-pattern>
+ 	<url-pattern>/ReturnFinanceServlet/edit</url-pattern>
+ 	<url-pattern>/ReturnFinanceServlet/update</url-pattern>
+ 	<url-pattern>/ReturnFinanceServlet/delete</url-pattern>
+ 	<url-pattern>/ReturnFinanceServlet/deleteexpenditure</url-pattern>
+ 	<url-pattern>/ReturnFinanceServlet/editexpenditure</url-pattern>
+ 	<url-pattern>/ReturnFinanceServlet/updateExpenditure</url-pattern>
+ 	
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 	<servlet-name>Expenditure</servlet-name>
+	<url-pattern>/Expenditure/add</url-pattern>
+	<url-pattern>/Expenditure/create</url-pattern>
+ 	</servlet-mapping>
+</web-app>
