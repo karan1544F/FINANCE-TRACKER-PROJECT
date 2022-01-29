@@ -38,7 +38,6 @@ public class LoginRegisterServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -84,7 +83,6 @@ public class LoginRegisterServlet extends HttpServlet {
 		            out.println("window.location.href = \"login.jsp\";");
 		            out.println("</script>");
 					 out.close();
-
 			   }
 			   }
 			//Step 8: catch and print out any exception
@@ -122,7 +120,7 @@ public class LoginRegisterServlet extends HttpServlet {
 			   if (i > 0){
 
 				   out.println("<script type=\"text/javascript\">");
-		            out.println("alert('user have been registered in!');");
+		            out.println("alert('User is now registered');");
 		            out.println("window.location.href = \"login.jsp\";");
 		            out.println("</script>");
 			   }
@@ -140,6 +138,15 @@ public class LoginRegisterServlet extends HttpServlet {
 
 			// TODO Auto-generated method stub
 			doGet(request, response);
+		}
+		else if (request.getParameter("logout") != null) {
+			
+			Cookie ck=new Cookie("USERID","");//creating cookie object 
+			ck.setMaxAge(0);
+			 response.addCookie(ck);//adding cookie in the response  
+			// TODO Auto-generated method stub
+			doGet(request, response);
+			response.sendRedirect("http://localhost:8090/FinanceTrackerWebsite/login.jsp");
 		}
 		
 	}
