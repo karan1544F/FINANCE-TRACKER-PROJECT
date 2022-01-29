@@ -9,6 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+<<<<<<< HEAD
   <servlet>
  	<servlet-name>ReturnFinanceServlet</servlet-name>
  	<servlet-class>ReturnFinanceServlet</servlet-class>
@@ -36,4 +37,20 @@
 	<url-pattern>/Expenditure/add</url-pattern>
 	<url-pattern>/Expenditure/create</url-pattern>
  	</servlet-mapping>
+=======
+  
+  <servlet>
+ <servlet-name>ProfileServlet</servlet-name>
+ <servlet-class>ProfileServlet</servlet-class>
+ </servlet>
+
+ <servlet-mapping>
+ <servlet-name>ProfileServlet</servlet-name>
+ <url-pattern>/ProfileServlet/edit</url-pattern>
+ <url-pattern>/ProfileServlet/update</url-pattern>
+ <url-pattern>/ProfileServlet/delete</url-pattern>
+ 
+ 
+ </servlet-mapping>
+>>>>>>> refs/remotes/origin/UserProfile
 </web-app>
