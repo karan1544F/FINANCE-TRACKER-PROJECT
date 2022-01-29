@@ -25,7 +25,7 @@ public class Expenditure extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	// Step 1: Prepare list of variables used for database connections
-	private String jdbcURL = "jdbc:mysql://localhost:3306/finance database";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/financetracker";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "password";
 	// Step 2: Prepare list of SQL prepared statements to perform CRUD to our
@@ -117,7 +117,7 @@ public class Expenditure extends HttpServlet {
 				try {
 				 Class.forName("com.mysql.jdbc.Driver");
 				 Connection con = DriverManager.getConnection(
-				 "jdbc:mysql://localhost:3306/finance database", "root", "password");
+				jdbcURL, jdbcUsername, jdbcPassword);
 				//Step 4: implement the sql query using prepared statement (https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html)
 				 PreparedStatement ps = con.prepareStatement("insert into EXPENDITURE values(?,?,?,?,?)");
 				
