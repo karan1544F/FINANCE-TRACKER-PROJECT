@@ -32,6 +32,21 @@
 						</div>
 					</div>
 					<div class="row">
+						<div class="col-sm-6 col-sm-offset-3">
+							Name:<input type="text" name="name" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-sm-offset-3">
+							Surname:<input type="text" name="surname" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-sm-offset-3">
+							Income:<input type="number" name="income" required>
+						</div>
+					</div>
+					<div class="row">
 						<div class="col-sm-6 col-sm-offset-3" style="padding: 5px; padding-left: 70px;">
 							<input type="submit" class="btn btn-primary" value="Register" name="register">
 						</div>
