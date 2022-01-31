@@ -19,7 +19,10 @@
  <servlet-name>ProfileServlet</servlet-name>
  <servlet-class>ProfileServlet</servlet-class>
  </servlet>
-  
+   <servlet>
+ <servlet-name>LoginRegisterServlet</servlet-name>
+ <servlet-class>LoginRegisterServlet</servlet-class>
+ </servlet>
 <servlet>
  	<servlet-name>Expenditure</servlet-name>
  	<servlet-class>Expenditure</servlet-class>
@@ -41,6 +44,14 @@
  <url-pattern>/ProfileServlet/edit</url-pattern>
  <url-pattern>/ProfileServlet/update</url-pattern>
  <url-pattern>/ProfileServlet/delete</url-pattern>
+ 
+ 
+ </servlet-mapping>
+ <servlet-mapping>
+ <servlet-name>LoginRegisterServlet</servlet-name>
+ <url-pattern>/LoginRegisterServlet</url-pattern>
+ <url-pattern>/LoginRegisterServlet/logout</url-pattern>
+
  
  
  </servlet-mapping>

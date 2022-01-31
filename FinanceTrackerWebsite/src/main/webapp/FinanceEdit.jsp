@@ -38,9 +38,7 @@
 						<c:if test="${finance != null}">
 Edit Finance
 </c:if>
-						<c:if test="${finance == null}">
-Add New Finance
-</c:if>
+						
 					</h2>
 				</caption>
 				<c:if test="${finance != null}">

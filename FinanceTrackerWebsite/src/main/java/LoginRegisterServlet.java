@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
@@ -39,6 +40,27 @@ public class LoginRegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String action = request.getServletPath();
+		try {
+			switch (action) {
+			
+			case "/LoginRegisterServlet":
+				doPost(request, response);
+				break;
+				
+			case "/LoginRegisterServlet/logout":
+				Logout(request, response);
+				break;
+			
+		
+			
+		
+			
+			
+			}
+		} catch (SQLException ex) {
+			throw new ServletException(ex);
+		}
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 	/**
@@ -72,10 +94,9 @@ public class LoginRegisterServlet extends HttpServlet {
 				   if(id!=""){
 				   Cookie ck=new Cookie("USERID",id);//creating cookie object  
 				   response.addCookie(ck);//adding cookie in the response  
-				   out.println("<script type=\"text/javascript\">");
-		            out.println("alert('user"+id+" have logged in!');");
-		            out.println("window.location.href = \"index.jsp\";");
-		            out.println("</script>");
+				  
+		    		response.sendRedirect("http://localhost:8080/FinanceTrackerWebsite/ReturnFinanceServlet/dashboard");
+
 		            
 				   }
 				   
@@ -95,7 +116,6 @@ public class LoginRegisterServlet extends HttpServlet {
 				}
 
 			// TODO Auto-generated method stub
-			doGet(request, response);			
 		}
 		
 		else if (request.getParameter("register") != null) {
@@ -152,18 +172,16 @@ public class LoginRegisterServlet extends HttpServlet {
 				}
 
 			// TODO Auto-generated method stub
-			doGet(request, response);
-		}
-		else if (request.getParameter("logout") != null) {
-			
-			Cookie ck=new Cookie("USERID","");//creating cookie object 
-			ck.setMaxAge(0);
-			 response.addCookie(ck);//adding cookie in the response  
-			// TODO Auto-generated method stub
-			doGet(request, response);
-			response.sendRedirect("http://localhost:8090/FinanceTrackerWebsite/login.jsp");
 		}
 		
+	}
+	private void Logout(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, ServletException, IOException {
+		Cookie ck=new Cookie("USERID","");//creating cookie object 
+		ck.setMaxAge(0);
+		 response.addCookie(ck);//adding cookie in the response  
+		// TODO Auto-generated method stub
+		response.sendRedirect("http://localhost:8080/FinanceTrackerWebsite/login.jsp");
 	}
 
 }

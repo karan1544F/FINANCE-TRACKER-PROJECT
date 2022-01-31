@@ -16,10 +16,52 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 
+
 <title>Insert title here</title>
 </head>
 <body>
-<body>
+	<nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a class="nav-link" routerLink="/home/employee"
+						routerLinkActive="active" hidden>Employee</a></li>
+
+				</ul>
+				<div class="navbar-nav ml-auto">
+					<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+						<div class="btn-group">
+							<a class="nav-link dropdown-toggle"
+								href="javascript:void(0)" role="button" data-toggle="dropdown">
+								<b style="padding-left: 5px">${name}</b>
+
+							</a>
+
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a class="dropdown-item" href="profile.html">Profile</a>
+
+								</li>
+								<li><div class="dropdown-divider"></div></li>
+								<li>
+								<form>
+								<a class="dropdown-item" href="../LoginRegisterServlet/logout"
+									>Logout
+									
+									</a>
+								
+								</form>
+								
+								</li>
+
+							</ul>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
 	<div class="main-part">
 		<div class="cpanel">
 			<div class="icon-part">
@@ -42,8 +84,8 @@
 		</div>
 		<div class="cpanel cpanel-orange">
 			<div class="icon-part">
-				<i class="fa fa-university" aria-hidden="true"></i> <br> <small>Ideal Monthly
-					Saving</small>
+				<i class="fa fa-university" aria-hidden="true"></i> <br> <small>Ideal
+					Monthly Saving</small>
 				<p>
 					$
 					<c:out value="${listFinance.saving/100 * listFinance.income}" />
@@ -52,14 +94,14 @@
 		</div>
 	</div>
 	<div class="row">
-	<div style="margin:auto;padding-bottom: 10px; padding-top: 20px" >
-	<a  class="btn btn-success"
-		href="/FinanceTrackerWebsite/ReturnFinanceServlet/edit?id=<c:out value='${listFinance.id}'/>"
-		class="btn btnsuccess">Edit Finance Details</a>
+		<div style="margin: auto; padding-bottom: 10px; padding-top: 20px">
+			<a class="btn btn-success"
+				href="/FinanceTrackerWebsite/ReturnFinanceServlet/edit?id=<c:out value='${listFinance.id}'/>"
+				class="btn btnsuccess">Edit Finance Details</a>
+		</div>
 	</div>
-	</div>
-	
-	
+
+
 </body>
 <div class="row" style="padding-bottom: 10px; padding-top: 20px">
 	<div class="container">
@@ -78,19 +120,19 @@
 				class="btn btnsuccess">Add Expenditure</a>
 		</div>
 		<table class="table">
-			<thead style="color:white; background-color:#3B619C">
+			<thead style="color: white; background-color: #3B619C">
 				<tr>
-			
+
 					<th>Type</th>
-					<th>Amount</th>
+					<th>Cost</th>
 					<th>Date</th>
 					<th>Action</th>
-			
+
 				</tr>
 			</thead>
 			<!-- Pass in the list of users receive via the Servlet’s response to a loop-->
 			<tbody>
-			<c:set var="total" value="${0}"/>
+				<c:set var="total" value="${0}" />
 
 				<c:forEach var="expenditure" items="${expenditure}">
 					<!-- For each user in the database, display their information accordingly -->
@@ -101,31 +143,37 @@
 						<fmt:parseDate pattern="yyyy-MM-dd" value="${expenditure.date}"
 							var="parsedDate" />
 						<td><fmt:formatDate value="${parsedDate}"
-pattern="yyyy-MM-dd" /></td>
+								pattern="yyyy-MM-dd" /></td>
 						<!-- For each user in the database, Edit/Delete buttons which invokes the edit/delete functions -->
-						<td>
-						<a href="editexpenditure?id=<c:out value='${expenditure.id}'/>">Edit</a>
+						<td><a
+							href="editexpenditure?id=<c:out value='${expenditure.id}'/>">Edit</a>
 							<a href="deleteexpenditure?id=<c:out value='${expenditure.id}'/>">Delete</a>
-							</td>
-							<c:set var="total" value="${total + expenditure.amount}" />
+						</td>
+						<c:set var="total" value="${total + expenditure.amount}" />
 					</tr>
 				</c:forEach>
 			</tbody>
-			<tfoot style="color:white; background-color:#EABC36">
-			<tr>
-			<td>
-				Sum
-			</td>
-			<td colspan=3>
-				${total}
-			</td>
-			</tr>
+			<tfoot style="color: white; background-color: #EABC36">
+				<tr>
+					<td>Sum</td>
+					<td colspan=3>${total}</td>
+				</tr>
 			</tfoot>
 		</table>
 	</div>
 </div>
 
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
 </body>
 <style type="text/css">
 body {

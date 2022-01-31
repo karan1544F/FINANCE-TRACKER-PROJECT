@@ -82,14 +82,13 @@ value='${expenditure.idfinance}' />" class="form-control"
 	
 	</fieldset>
 				<fieldset class="form-group">
-					<label> Amount</label> <input type="text"
+					<label> Cost</label> <input type="number"
 						value="<c:out
-value='${expenditure.amount}' />" class="form-control"
+value='${expenditure.amount}' />" step="any" class="form-control"
 						name="amount">
 				</fieldset>
 				<fieldset class="form-group">
-				<fmt:parseDate pattern="yyyy-MM-dd" value="${expenditure.date} "
-				var = "parsedDate" />
+				<fmt:parseDate pattern="yyyy-MM-dd" value="${expenditure.date}" var = "parsedDate" />
 	<label>Date:</label> <input type="date" name="date" class="form-control" value="<fmt:formatDate value="${parsedDate}"
 	pattern="yyyy-MM-dd" />" name="date" required>
 					

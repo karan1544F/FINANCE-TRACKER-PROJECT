@@ -10,6 +10,7 @@ import javax.servlet.RequestDispatcher;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,9 +28,9 @@ public class ReturnFinanceServlet extends HttpServlet {
 	private String jdbcPassword = "password";
 	// Step 2: Prepare list of SQL prepared statements to perform CRUD to our
 	// database
-	private static final String INSERT_FINANCE_SQL = "INSERT INTO finance" + " (id,iduser, income, saving) VALUES "
-			+ " (?, ?, ?);";
-	private static final String SELECT_FINANCE_BY_ID = "select id,iduser,income,saving from finance where id =?";
+	private static final String INSERT_FINANCE_SQL = "INSERT INTO finance" + " (id,iduser, income, saving) VALUES "+ " (?, ?, ?);";
+	private static final String SELECT_FINANCE_BY_IDUSER = "select id,iduser,income,saving from finance where iduser =?";
+	private static final String SELECT_FINANCE_BY_ID = "select id,iduser,income,saving from finance where iduser =?";
 	private static final String SELECT_EXPENDITURE_BY_ID = "select id,idfinance,type,amount,date from expenditure where id =?";
 	private static final String SELECT_ALL_FINANCE = "select * from finance";
 	private static final String DELETE_FINANCE_SQL = "delete from finance where id = ?;";
@@ -110,11 +111,25 @@ public class ReturnFinanceServlet extends HttpServlet {
 
 	private void listFinance(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
+		
 		try (Connection connection = getConnection();
+
 				// Step 5.1: Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_FINANCE);) {
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FINANCE_BY_IDUSER);) {
 			// Step 5.2: Execute the query or update query
+			String userid = "";
+			Cookie[] cookies = request.getCookies();
+			for (int i = 0; i < cookies.length; i++) {
+				if (cookies[i].getName().equals("USERID") ) {
+
+					userid = cookies[i].getValue();
+					
+				}
+				}
+			preparedStatement.setString(1, userid);
 			ResultSet rs = preparedStatement.executeQuery();
+
+			
 			// Step 5.3: Process the ResultSet object.
 			while (rs.next()) {
 				String id = rs.getString("id");

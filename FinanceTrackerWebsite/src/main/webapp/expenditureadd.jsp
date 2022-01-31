@@ -52,7 +52,7 @@ value='${idfinance}' />"
 	</fieldset>
 	
 	<fieldset class="form-group">
-	<label>Amount:</label> <input type="number" class="form-control" name="amount" required>
+	<label>Cost:</label> <input type="number" class="form-control" name="amount" step="any" required>
 	</fieldset>
 	
 	<fieldset class="form-group">
