@@ -30,7 +30,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 	// database
 	private static final String INSERT_FINANCE_SQL = "INSERT INTO finance" + " (id,iduser, income, saving) VALUES "+ " (?, ?, ?);";
 	private static final String SELECT_FINANCE_BY_IDUSER = "select id,iduser,income,saving from finance where iduser =?";
-	private static final String SELECT_FINANCE_BY_ID = "select id,iduser,income,saving from finance where iduser =?";
+	private static final String SELECT_FINANCE_BY_ID = "select id,iduser,income,saving from finance where id =?";
 	private static final String SELECT_EXPENDITURE_BY_ID = "select id,idfinance,type,amount,date from expenditure where id =?";
 	private static final String SELECT_ALL_FINANCE = "select * from finance";
 	private static final String DELETE_FINANCE_SQL = "delete from finance where id = ?;";
@@ -131,13 +131,26 @@ public class ReturnFinanceServlet extends HttpServlet {
 
 			
 			// Step 5.3: Process the ResultSet object.
-			while (rs.next()) {
+			if (rs.next()) {
 				String id = rs.getString("id");
 				String iduser = rs.getString("iduser");
 				String income = rs.getString("income");
 				String saving = rs.getString("saving");
 				request.setAttribute("expenditure", expenditure.listExpenditure(request, response));
 				request.setAttribute("listFinance", new Finance(id, iduser, income, saving));
+				
+				PreparedStatement preparedStatement2 = connection.prepareStatement("select name,surname,bio from profile where iduser =?"); 
+				preparedStatement2.setString(1, userid);
+				ResultSet rs2 = preparedStatement2.executeQuery();
+				if (rs2.next()) {
+					request.setAttribute("name", rs2.getString("name") );
+					request.setAttribute("surname", rs2.getString("surname"));
+
+				}
+
+				
+
+				
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());

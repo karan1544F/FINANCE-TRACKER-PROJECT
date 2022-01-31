@@ -15,6 +15,11 @@
 		<div>
 			<a class="navbar-brand"> Profile Page </a>
 		</div>
+		<ul class="navbar-nav">
+			<li><a
+				href="<%=request.getContextPath()%>/ReturnFinanceServlet/dashboard"
+				class="nav-link">Back to Dashboard</a></li>
+		</ul>
 	</nav>
 	<div class="container col-md-6">
 		<div class="card">
@@ -43,22 +48,33 @@ value='${profile.name}' />" class="form-control"
 					<fieldset class="form-group">
 						<label>Surname</label> <input type="text"
 							value="<c:out
-value='${profile.surname}' />"
-							class="form-control" name="surname">
+value='${profile.surname}' />" class="form-control"
+							name="surname">
 					</fieldset>
 					<fieldset class="form-group">
-						<label>Bio</label> <input type="text"
-							value="<c:out
-value='${profile.bio}' />" class="form-control"
-							name="bio">
+						<label>Bio</label>
+						<textarea type="text" class="form-control" name="bio">${profile.bio}</textarea>
 					</fieldset>
-					<button type="submit" class="btn btn-success">Save</button>
+										<div class="col d-flex justify-content-center">
+															<button type="submit" class="btn btn-success">Save</button>
+										
+										</div>
+					
 				</form>
 				<form action="delete" method="post">
-				<input type= "hidden" name="iduser" value="<c:out
-value='${profile.iduser}' />" type="submit" class="btn btn-danger"/>
-<button name="iduser" value="<c:out
-value='${profile.iduser}' />" type="submit" class="btn btn-danger">Delete User</button>
+					<div style="padding-bottom: 10px; padding-top: 5px">
+						<input type="hidden" name="iduser"
+							value="<c:out
+value='${profile.iduser}' />" type="submit"
+							class="btn btn-danger" />
+					</div>
+					<div class="col d-flex justify-content-center"
+						style="padding-bottom: 10px; padding-top: 5px">
+						<button name="iduser" type="submit" class="btn btn-danger">Delete
+							Account</button>
+					</div>
+
+
 				</form>
 			</div>
 		</div>

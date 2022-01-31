@@ -33,12 +33,12 @@
 						<div class="btn-group">
 							<a class="nav-link dropdown-toggle"
 								href="javascript:void(0)" role="button" data-toggle="dropdown">
-								<b style="padding-left: 5px">${name}</b>
+								<b style="padding-left: 5px">${name} ${surname}</b>
 
 							</a>
 
 							<ul class="dropdown-menu dropdown-menu-right">
-								<li><a class="dropdown-item" href="profile.html">Profile</a>
+								<li><a class="dropdown-item" href="../ProfileServlet/edit?iduser=<c:out value='${listFinance.iduser}'/>">Profile</a>
 
 								</li>
 								<li><div class="dropdown-divider"></div></li>

@@ -38,14 +38,7 @@ crossorigin="anonymous">
                         </div>
                     </div>
             </form>
-            <form action="LoginRegisterServlet" method="post">
-                
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3" style="padding: 5px; padding-left: 80px;">
-                            <input type="submit"  class="btn btn-primary" value="Logout" name="logout">
-                        </div>
-                    </div>
-            </form>
+            
         </div>
         <div class="modal-footer">
             <p style="margin:auto;">

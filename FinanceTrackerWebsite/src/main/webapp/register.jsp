@@ -43,7 +43,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-6 col-sm-offset-3">
-							Income:<input type="number" name="income" required>
+							Income:<input type="number" name="income" step="any"required>
 						</div>
 					</div>
 					<div class="row">
@@ -55,7 +55,7 @@
 			</div>
 			<div class="modal-footer">
 				<p style="margin: auto;">
-					New to site? - <a
+					Already registered? - <a
 						href="http://localhost:8080/FinanceTrackerWebsite/login.jsp">Login
 						Here</a>
 				</p>
