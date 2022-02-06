@@ -34,26 +34,6 @@ public class Finance {
 	public String getsaving() {
 		return saving;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public void setsaving(String saving) {
 		this.saving = saving;
 	}
