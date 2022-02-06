@@ -43,6 +43,31 @@ public class ListExpenditure {
 		return date;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void setdate(String date) {
 		this.date = date;
 	}

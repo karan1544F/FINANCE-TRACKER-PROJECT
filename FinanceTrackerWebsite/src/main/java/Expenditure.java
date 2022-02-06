@@ -99,6 +99,29 @@ public class Expenditure extends HttpServlet {
 		
 		request.getRequestDispatcher("/expenditureadd.jsp").forward(request, response);
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	private void createExpenditure(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {

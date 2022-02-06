@@ -19,6 +19,30 @@
 	<option>Leisure</option>
 	<option>Other</option>
 	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	amount: <input type="text" name="amount">
 	date:  <input type="date" name="date"value="<c:out value='${currentDate}' />" />
 	<input type="submit" value = "createExpenditure" />

@@ -63,6 +63,30 @@ value='${expenditure.idfinance}' />" class="form-control"
 				</fieldset>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				<fieldset class="form-group">
 					<label>type</label> <input type="text"
 						value="<c:out
