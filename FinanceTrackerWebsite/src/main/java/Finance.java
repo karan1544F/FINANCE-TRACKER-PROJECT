@@ -35,6 +35,25 @@ public class Finance {
 		return saving;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void setsaving(String saving) {
 		this.saving = saving;
 	}

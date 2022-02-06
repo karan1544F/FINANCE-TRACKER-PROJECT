@@ -67,6 +67,17 @@ public class FinanceServlet extends HttpServlet {
 		 //Step 7: check if the query had been successfully execute, return “You are successfully registered” via the response,
 		 
 		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 		 if (i > 0){
 		 response.sendRedirect("ReturnFinanceServlet/dashboard");
 		 }
