@@ -136,7 +136,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 				String iduser = rs.getString("iduser");
 				String income = rs.getString("income");
 				String saving = rs.getString("saving");
-				request.setAttribute("expenditure", expenditure.listExpenditure(request, response));
+				request.setAttribute("expenditure", expenditure.listExpenditure(request, response,id));
 				request.setAttribute("listFinance", new Finance(id, iduser, income, saving));
 				
 				PreparedStatement preparedStatement2 = connection.prepareStatement("select name,surname,bio from profile where iduser =?"); 

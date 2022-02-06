@@ -31,7 +31,7 @@ public class Expenditure extends HttpServlet {
 	// Step 2: Prepare list of SQL prepared statements to perform CRUD to our
 	// database
 	private static final String INSERT_EXPENDITURE_SQL = "INSERT INTO expenditure" + " (id,idfinance, type, amount, date) VALUES " + " (?, ?, ?, ?);";
-	private static final String SELECT_EXPENDITURE_BY_ID = "select id,idfinance,type,amount,date from expenditure where id =?";
+	private static final String SELECT_EXPENDITURE_BY_ID = "select id,idfinance,type,amount,date from expenditure where idfinance =?";
 	private static final String SELECT_ALL_EXPENDITURE = "select * from expenditure";
 	private static final String DELETE_EXPENDITURE_SQL = "delete from expenditure where id = ?;";
 	private static final String UPDATE_EXPENDITURE_SQL = "update expenditure set id = ?,idfinance= ?, type =?,amount =?, date =? where id = ?;";
@@ -143,14 +143,15 @@ public class Expenditure extends HttpServlet {
 				 }
 				 
 				 }
-		public List listExpenditure(HttpServletRequest request, HttpServletResponse response)
+		public List listExpenditure(HttpServletRequest request, HttpServletResponse response,String userid)
 			throws SQLException, IOException, ServletException {
 			
 			List <ListExpenditure> expenditure = new ArrayList <>();
 			try (Connection connection = getConnection();
 					
 				// Step 5.1: Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_EXPENDITURE);) {
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_EXPENDITURE_BY_ID);) {
+				preparedStatement.setString(1, userid);
 				// Step 5.2: Execute the query or update query
 				ResultSet rs = preparedStatement.executeQuery();
 				// Step 5.3: Process the ResultSet object.
