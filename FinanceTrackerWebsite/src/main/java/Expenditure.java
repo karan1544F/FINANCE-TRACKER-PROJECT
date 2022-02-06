@@ -98,30 +98,6 @@ public class Expenditure extends HttpServlet {
 		request.setAttribute("idfinance", idfinance);
 		
 		request.getRequestDispatcher("/expenditureadd.jsp").forward(request, response);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 	private void createExpenditure(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {

@@ -89,29 +89,6 @@ public class ReturnFinanceServlet extends HttpServlet {
 			case "/ReturnFinanceServlet/dashboard":
 				listFinance(request, response);
 				break;
-			
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
 			default:
 				listFinance(request, response);
 				break;

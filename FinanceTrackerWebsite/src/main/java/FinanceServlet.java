@@ -74,10 +74,6 @@ public class FinanceServlet extends HttpServlet {
 		 System.out.println(exception);
 		 out.close();
 		 }
-		
-		
-		
-		
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

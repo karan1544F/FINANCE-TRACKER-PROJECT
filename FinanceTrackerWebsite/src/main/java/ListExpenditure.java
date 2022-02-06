@@ -42,32 +42,6 @@ public class ListExpenditure {
 	public String getdate() {
 		return date;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public void setdate(String date) {
 		this.date = date;
 	}
