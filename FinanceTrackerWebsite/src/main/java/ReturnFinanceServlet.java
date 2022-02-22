@@ -250,7 +250,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 			throws SQLException, ServletException, IOException {
 		// get parameter passed in the URL
 		String id = request.getParameter("id");
-		ListExpenditure existingExpenditure = new ListExpenditure("", "", "", "", "");
+		ListExpenditure existingExpenditure = new ListExpenditure("", "", "", "", "");	
 		// Step 1: Establishing a Connection
 		try (Connection connection = getConnection();
 				// Step 2:Create a statement using connection object

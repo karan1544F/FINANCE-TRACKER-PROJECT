@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
 <link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link
@@ -155,7 +155,7 @@
 			</tbody>
 			<tfoot style="color: white; background-color: #EABC36">
 				<tr>
-					<td>Sum</td>
+					<td>Sum2sumsumsum</td>
 					<td colspan=3>${total}</td>
 				</tr>
 			</tfoot>
