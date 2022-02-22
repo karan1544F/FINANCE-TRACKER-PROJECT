@@ -155,7 +155,7 @@
 			</tbody>
 			<tfoot style="color: white; background-color: #EABC36">
 				<tr>
-					<td>Sum2sumsumsum</td>
+					<td>Sumsumsumsum</td>
 					<td colspan=3>${total}</td>
 				</tr>
 			</tfoot>
