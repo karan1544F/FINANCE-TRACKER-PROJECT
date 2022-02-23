@@ -100,7 +100,8 @@ public class LoginRegisterServlet extends HttpServlet {
 						Cookie ck = new Cookie("USERID", id);// creating cookie object
 						response.addCookie(ck);// adding cookie in the response
 
-						response.sendRedirect("http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
+						response.sendRedirect(
+								"http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
 
 					}
 
@@ -193,7 +194,7 @@ public class LoginRegisterServlet extends HttpServlet {
 		ck.setPath("/FinanceTrackerWebsite");
 		response.addCookie(ck);// adding cookie in the response
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/login.jsp").forward(request, response);
+		response.sendRedirect("http://localhost:8080/FinanceProjectMain/login.jsp");
 	}
 
 }
