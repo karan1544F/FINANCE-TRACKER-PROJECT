@@ -96,7 +96,7 @@
 	<div class="row">
 		<div style="margin: auto; padding-bottom: 10px; padding-top: 20px">
 			<a class="btn btn-success"
-				href="../ReturnFinanceServlet/edit?id=<c:out value='${listFinance.id}'/>"
+				href="/FinanceTrackerWebsite/ReturnFinanceServlet/edit?id=<c:out value='${listFinance.id}'/>"
 				class="btn btnsuccess">Edit Finance Details</a>
 		</div>
 	</div>
@@ -116,7 +116,7 @@
 		<div style="padding-bottom: 10px; padding-top: 10px">
 
 			<a class="btn btn-success"
-				href="../Expenditure/add?idfinance=<c:out value='${listFinance.id}'/>"
+				href="/FinanceTrackerWebsite/Expenditure/add?idfinance=<c:out value='${listFinance.id}'/>"
 				class="btn btnsuccess">Add Expenditure</a>
 		</div>
 		<table class="table">

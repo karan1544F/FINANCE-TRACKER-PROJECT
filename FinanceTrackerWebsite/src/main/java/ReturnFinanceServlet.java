@@ -157,7 +157,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 		}
 		// Step 5.4: Set the users list into the listUsers attribute to be pass to the
 		// userManagement.jsp
-		response.sendRedirect("http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
+		request.getRequestDispatcher("/returnFinance.jsp").forward(request, response);
 	}
 
 	// method to get parameter, query database for existing user data and redirect
@@ -192,7 +192,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 
 	// method to update the user table base on the form data
 	private void updateFinance(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException, ServletException {
+			throws SQLException, IOException {
 		// Step 1: Retrieve value from the request
 
 		String id = request.getParameter("id");
@@ -213,7 +213,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 		}
 		// Step 3: redirect back to UserServlet (note: remember to change the url to
 		// your project name)
-		response.sendRedirect("http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
+		response.sendRedirect("http://localhost:8080/FinanceTrackerWebsite/ReturnFinanceServlet/dashboard");
 	}
 
 	// method to delete user
@@ -233,7 +233,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 	}
 	
 	private void deleteexpenditure(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException, ServletException {
+			throws SQLException, IOException {
 		// Step 1: Retrieve value from the request
 		String id = request.getParameter("id");
 		// Step 2: Attempt connection with database and execute delete user SQL query
@@ -244,7 +244,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 		}
 		// Step 3: redirect back to UserServlet dashboard (note: remember to change the
 		// url to your project name)
-		request.getRequestDispatcher("/login.jsp").forward(request, response);
+		response.sendRedirect("http://localhost:8080/FinanceTrackerWebsite/ReturnFinanceServlet/dashboard");
 	}
 	private void showExpenditureEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
@@ -276,7 +276,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 	}
 	
 	private void updateExpenditure(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException, ServletException {
+			throws SQLException, IOException {
 		// Step 1: Retrieve value from the request
 
 		String id = request.getParameter("id");
@@ -300,7 +300,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 		}
 		// Step 3: redirect back to UserServlet (note: remember to change the url to
 		// your project name)
-		response.sendRedirect("http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
+		response.sendRedirect("http://localhost:8080/FinanceTrackerWebsite/ReturnFinanceServlet/dashboard");
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
