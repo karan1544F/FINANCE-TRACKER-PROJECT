@@ -62,13 +62,13 @@ value='${finance.iduser}' />" class="form-control"
 
 
 				<fieldset class="form-group">
-					<label>Income</label> <input type="number" step="any" name="saving"
+					<label>Income</label> <input type="number" step="any" 
 						value="<c:out
 value='${finance.income}' />" class="form-control"
 						name="income" required>
 				</fieldset>
 				<fieldset class="form-group">
-					<label> Percentage of income to savings</label> <input  type="number" min="1" max="100" name="saving"
+					<label> Percentage of income to savings</label> <input  type="number" min="1" max="100" 
 						value="<c:out
 value='${finance.saving}' />" class="form-control"
 						name="saving" required>
