@@ -116,7 +116,7 @@
 		<div style="padding-bottom: 10px; padding-top: 10px">
 
 			<a class="btn btn-success"
-				href="/FinanceTrackerWebsite/Expenditure/add?idfinance=<c:out value='${listFinance.id}'/>"
+				href="../Expenditure/add?idfinance=<c:out value='${listFinance.id}'/>"
 				class="btn btnsuccess">Add Expenditure</a>
 		</div>
 		<table class="table">
