@@ -26,7 +26,10 @@ public class NewTest {
 	  driver.findElement(By.name("saving")).clear();
 	  driver.findElement(By.name("income")).sendKeys("10000");
 	  driver.findElement(By.name("saving")).sendKeys("25");
-	  driver.findElement(By.linkText("Save")).click();
+	  driver.findElement(By.cssSelector("body > div > div > div > form > button")).click();
+	  //test expenditure
+	  
+	  
   }
   @BeforeTest
   public void beforeTest() {
