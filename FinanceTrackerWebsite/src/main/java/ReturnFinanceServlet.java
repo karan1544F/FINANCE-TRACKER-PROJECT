@@ -213,7 +213,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 		}
 		// Step 3: redirect back to UserServlet (note: remember to change the url to
 		// your project name)
-		response.sendRedirect("http://localhost:8080/FinanceTrackerWebsite/ReturnFinanceServlet/dashboard");
+		response.sendRedirect("http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
 	}
 
 	// method to delete user
