@@ -157,7 +157,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 		}
 		// Step 5.4: Set the users list into the listUsers attribute to be pass to the
 		// userManagement.jsp
-		request.getRequestDispatcher("/returnFinance.jsp").forward(request, response);
+		response.sendRedirect("http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
 	}
 
 	// method to get parameter, query database for existing user data and redirect
@@ -213,7 +213,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 		}
 		// Step 3: redirect back to UserServlet (note: remember to change the url to
 		// your project name)
-		request.getRequestDispatcher("/returnFinance.jsp").forward(request, response);
+		response.sendRedirect("http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
 	}
 
 	// method to delete user
@@ -300,7 +300,7 @@ public class ReturnFinanceServlet extends HttpServlet {
 		}
 		// Step 3: redirect back to UserServlet (note: remember to change the url to
 		// your project name)
-		request.getRequestDispatcher("/returnFinance.jsp").forward(request, response);
+		response.sendRedirect("http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

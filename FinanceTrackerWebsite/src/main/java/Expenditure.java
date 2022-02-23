@@ -133,7 +133,7 @@ public class Expenditure extends HttpServlet {
 				 
 				 
 				 if (i > 0){
-					 request.getRequestDispatcher("/returnFinance.jsp").forward(request, response);
+					 response.sendRedirect("http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
 				 }
 				 }
 				 //Step 8: catch and print out any exception
