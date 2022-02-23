@@ -95,9 +95,9 @@
 	</div>
 	<div class="row">
 		<div style="margin: auto; padding-bottom: 10px; padding-top: 20px">
-			<a class="btn btn-success" 
+			<a class="btn btn-success"
 				href="../ReturnFinanceServlet/edit?id=<c:out value='${listFinance.id}'/>"
-				class="btn btnsuccess" >Edit Finance Details</a>
+				class="btn btnsuccess">Edit Finance Details</a>
 		</div>
 	</div>
 

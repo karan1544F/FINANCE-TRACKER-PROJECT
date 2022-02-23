@@ -22,9 +22,9 @@ public class NewTest {
 	  driver.findElement(By.name("login")).click();
 	  //testing update financial information^2
 	  driver.findElement(By.linkText("Edit Finance Details")).click();
-	  driver.findElement(By.name("income")).clear();
+	  driver.findElement(By.cssSelector("body > div > div > div > form > fieldset:nth-child(5) > input")).clear();
 	  driver.findElement(By.name("saving")).clear();
-	  driver.findElement(By.name("income")).sendKeys("10000");
+	  driver.findElement(By.cssSelector("body > div > div > div > form > fieldset:nth-child(5) > input")).sendKeys("11111");
 	  driver.findElement(By.name("saving")).sendKeys("25");
 	  driver.findElement(By.cssSelector("body > div > div > div > form > button")).click();
 	  //test expenditure
