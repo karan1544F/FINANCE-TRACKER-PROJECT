@@ -20,6 +20,13 @@ public class NewTest {
 	  driver.findElement(By.name("email")).sendKeys("testuser");
 	  driver.findElement(By.name("password")).sendKeys("testuser");
 	  driver.findElement(By.name("login")).click();
+	  //testing update financial information^2
+	  driver.findElement(By.linkText("Edit Finance Details")).click();
+	  driver.findElement(By.name("income")).clear();
+	  driver.findElement(By.name("saving")).clear();
+	  driver.findElement(By.name("income")).sendKeys("10000");
+	  driver.findElement(By.name("saving")).sendKeys("25");
+	  driver.findElement(By.linkText("Save")).click();
   }
   @BeforeTest
   public void beforeTest() {
