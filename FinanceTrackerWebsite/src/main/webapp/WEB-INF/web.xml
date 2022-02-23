@@ -13,6 +13,11 @@
  	<servlet-name>ReturnFinanceServlet</servlet-name>
  	<servlet-class>ReturnFinanceServlet</servlet-class>
  	
+ 	<init-param>
+        <param-name>urlReturnFinanceServlet</param-name>
+        <param-value>/ReturnFinanceServlet/dashboard</param-value>
+    </init-param>
+ 	
  	
   </servlet>
    <servlet>
