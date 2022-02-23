@@ -101,7 +101,7 @@ public class LoginRegisterServlet extends HttpServlet {
 						response.addCookie(ck);// adding cookie in the response
 
 						response.sendRedirect(
-								"http://localhost:8080/FinanceTrackerWebsite/ReturnFinanceServlet/dashboard");
+								"http://localhost:8080/FinanceProjectMain/ReturnFinanceServlet/dashboard");
 
 					}
 
