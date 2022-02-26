@@ -3,6 +3,7 @@ package FinanceTrackertest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -28,6 +29,12 @@ public class NewTest {
 	  driver.findElement(By.name("saving")).sendKeys("25");
 	  driver.findElement(By.cssSelector("body > div > div > div > form > button")).click();
 	  //test expenditure
+	  driver.findElement(By.cssSelector("body > div:nth-child(4) > div > div > a")).click();
+	  Select selectType = new Select(driver.findElement(By.cssSelector("body > form > div > div > div > fieldset:nth-child(3) > select")));
+	  selectType.selectByVisibleText("Travel");
+	  driver.findElement(By.cssSelector("body > form > div > div > div > fieldset:nth-child(4) > input")).sendKeys("11111");
+	  driver.findElement(By.cssSelector("body > form > div > div > div > fieldset:nth-child(5) > input")).sendKeys("09082003");
+	  driver.findElement(By.cssSelector("body > form > div > div > div > input")).click();
 	  
 	  
   }
