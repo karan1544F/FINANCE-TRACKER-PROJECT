@@ -17,7 +17,7 @@ public class NewTest {
 	  WebDriver driver = new ChromeDriver();
 	  //navigate to this url
 	  driver.get("http://localhost:8080/FinanceProjectMain/login.jsp");
-	  // enter a valid username
+	  // enter a valid account 
 	  driver.findElement(By.name("email")).sendKeys("testuser");
 	  driver.findElement(By.name("password")).sendKeys("testuser");
 	  driver.findElement(By.name("login")).click();
