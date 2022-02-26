@@ -28,15 +28,25 @@ public class NewTest {
 	  driver.findElement(By.cssSelector("body > div > div > div > form > fieldset:nth-child(5) > input")).sendKeys("11111");
 	  driver.findElement(By.name("saving")).sendKeys("25");
 	  driver.findElement(By.cssSelector("body > div > div > div > form > button")).click();
-	  //test expenditure
+	  //test add expenditure
 	  driver.findElement(By.cssSelector("body > div:nth-child(4) > div > div > a")).click();
 	  Select selectType = new Select(driver.findElement(By.cssSelector("body > form > div > div > div > fieldset:nth-child(3) > select")));
 	  selectType.selectByVisibleText("Travel");
 	  driver.findElement(By.cssSelector("body > form > div > div > div > fieldset:nth-child(4) > input")).sendKeys("11111");
 	  driver.findElement(By.cssSelector("body > form > div > div > div > fieldset:nth-child(5) > input")).sendKeys("09082003");
 	  driver.findElement(By.cssSelector("body > form > div > div > div > input")).click();
-	  
-	  
+	  //test update expenditure
+	  driver.findElement(By.cssSelector("body > div:nth-child(4) > div > table > tbody > tr:nth-child(1) > td:nth-child(4) > a:nth-child(1)")).click();
+	  Select selectTypeedit = new Select(driver.findElement(By.cssSelector("body > div > div > div > form > fieldset:nth-child(5) > select")));
+	  selectTypeedit.selectByVisibleText("Food");
+	  driver.findElement(By.cssSelector("body > div > div > div > form > fieldset:nth-child(6) > input")).clear();
+	  driver.findElement(By.cssSelector("body > div > div > div > form > fieldset:nth-child(6) > input")).sendKeys("11");
+	  driver.findElement(By.cssSelector("body > div > div > div > form > fieldset:nth-child(7) > input")).clear();
+	  driver.findElement(By.cssSelector("body > div > div > div > form > fieldset:nth-child(7) > input")).sendKeys("09082004");
+	  driver.findElement(By.cssSelector("body > div > div > div > form > button")).click();
+	  //test delete expenditure
+	  driver.findElement(By.cssSelector("body > div:nth-child(4) > div > table > tbody > tr:nth-child(1) > td:nth-child(4) > a:nth-child(2)")).click();
+	 
   }
   @BeforeTest
   public void beforeTest() {
